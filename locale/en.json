@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Rewind to before this prompt",
+    "description": "Adds a \"rewind to before this prompt\" action under each finished turn: restores the files that turn changed through DSH's file tools to their pre-turn state and opens a new branch session, keeping the original session untouched."
+  }
+}

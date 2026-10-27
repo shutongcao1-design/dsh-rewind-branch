@@ -1,0 +1,11 @@
+# Runtime data: journal, content-addressed blobs, safety backups.
+data/
+
+# npm / pnpm
+node_modules/
+*.tgz
+
+# Logs and OS noise
+*.log
+.DS_Store
+Thumbs.db

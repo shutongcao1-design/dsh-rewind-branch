@@ -1,0 +1,14 @@
+# dsh-rewind-branch — one Host row.
+#
+# The Host half listens on tools/pre-execute, tools/result, session/event and
+# agent/status, keeps pre-write bytes of file-tool targets in a content-addressed
+# store, and serves /_dsh/dsh-rewind-branch/{preview,rewind,client.js} from the
+# same-origin web server. The Client half (the per-turn button) arrives through
+# package.json's dsh.client declaration.
+#
+# Disabling this single row is safe: capture stops, the turn-tail button
+# disappears, and existing journal data stays on disk.
+- insert:
+    - id: dsh-rewind-branch
+      name: dsh-rewind-branch
+      config: {}

@@ -1,0 +1,67 @@
+{
+  "name": "dsh-rewind-branch",
+  "version": "0.1.0",
+  "description": "Per-turn fork-and-rewind for DeepSeek Harness: an action under each finished turn restores the files that turn changed through DSH's file tools to their pre-turn state, then opens a new branch session at that message boundary while the original session stays untouched. No git required.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "rewind",
+    "undo",
+    "fork",
+    "session",
+    "checkpoint"
+  ],
+  "license": "MIT",
+  "author": "shutongcao1-design",
+  "homepage": "https://github.com/shutongcao1-design/dsh-rewind-branch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shutongcao1-design/dsh-rewind-branch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shutongcao1-design/dsh-rewind-branch/issues"
+  },
+  "icon": "./icon.svg",
+  "scripts": {
+    "check": "node --check index.js && node --check client.js && node --check lib/store.js && node --check lib/plan.js",
+    "test": "node --test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-chat"
+      ]
+    },
+    "engines": {
+      "dsh": ">=0.2.1-rc.3"
+    }
+  }
+}
